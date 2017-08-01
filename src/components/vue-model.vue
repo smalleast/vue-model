@@ -75,6 +75,7 @@
     &-content {
       border-radius: 5px;
       overflow: hidden;
+      text-align: center;
     }
 
     &[data-visible=true] {
