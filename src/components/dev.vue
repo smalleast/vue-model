@@ -2,7 +2,7 @@
   <aside class="dev">
     <button class="button" v-on:click="_click()">show backdrop</button>
     <VueModel ref="vnp" >
-      <div slot="main">
+      <div >
         这是测试的数据
         这是测试的数据
         这是测试的数据

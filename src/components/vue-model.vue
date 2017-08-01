@@ -1,13 +1,10 @@
 <template>
-  <aside class="vue-model-container" v-on:click="hide()">
+  <aside class="vue-model-container" :data-hidden="hasHidden" v-on:click="hide()">
     <div class="vue-model"
          :data-visible="visible"
          v-on:transitionend="_onTransitionEnd()"
     >
       <div class="vue-modal-content">
-        <slot name="header"></slot>
-        <slot name="main"></slot>
-        <slot name="footer"></slot>
         <slot></slot>
       </div>
 
@@ -21,7 +18,7 @@
     data() {
       return {
         visible: false,
-        hidden: true
+        hasHidden: true
       };
     },
     props: {},
@@ -29,10 +26,16 @@
     },
     methods: {
       show(){
-        this.visible = !this.visible;
+        this.hasHidden = false;
+        setTimeout(() => {
+          this.visible = !this.visible;
+        }, 100);
       },
       hide(){
         this.visible = false;
+        setTimeout(() => {
+          this.hasHidden = true;
+        }, 100);
       },
       _onTransitionEnd(){
 
@@ -43,36 +46,7 @@
 </script>
 <style rel="stylesheet/scss" lang="scss">
 
-  .hr {
-    position: relative;
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: auto;
-      right: auto;
-      background-color: #e4e4e4;
-      z-index: 2;
-    }
-    &-x {
-      @extend .hr;
-      &:after {
-        width: 100%;
-        height: 1px;
-        transform: scaleY(.5);
-      }
-    }
-    &-y {
-      @extend .hr;
-      &:after {
-        width: 1px;
-        height: 100%;
-        transform: scaleX(.5);
-      }
-    }
-  }
+
 
   .vue-model {
     font-family: -apple-system, SF UI Text, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -85,6 +59,16 @@
     transition: transform 0.2s ease-in-out, opacity 0.22s linear;
     user-select: none;
     opacity: 0.01;
+    &-container {
+      .vue-model {
+        left: 50%;
+      }
+      &[data-hidden=true] {
+        .vue-model {
+          left: -50%;
+        }
+      }
+    }
     &[hidden] {
       display: none;
     }
@@ -96,54 +80,6 @@
     &[data-visible=true] {
       opacity: 1;
       transform: translate(-50%, 0%) scale(1);
-    }
-
-    &[data-theme=tranparent] {
-    }
-    &[data-theme=ios] {
-      > * {
-        background-color: rgb(255, 255, 255);
-      }
-      .react-modal-ft {
-        @extend .hr-x;
-        .react-modal-button {
-          &:active {
-            background-color: #ddd;
-          }
-          + .react-modal-button {
-            @extend .hr-y;
-          }
-        }
-      }
-    }
-    &-hd {
-      text-align: center;
-      padding: 15px 15px 0 15px;
-      font-size: 16px;
-    }
-    &-bd {
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-    }
-    &-ft {
-      height: 44px;
-      display: flex;
-      justify-content: center;
-      font-size: 14px;
-
-    }
-    &-button {
-      width: 100%;
-      height: 44px;
-      line-height: 44px;
-      text-align: center;
-      color: #007aff;
-      padding: 0 5px;
-      white-space: normal;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      box-sizing: border-box;
     }
   }
 
