@@ -4,7 +4,7 @@
          :data-visible="visible"
          v-on:transitionend="_onTransitionEnd()"
     >
-      <div class="vue-modal-content">
+      <div class="vue-model-content">
         <slot></slot>
       </div>
 
