@@ -50,7 +50,7 @@
 
   .vue-model {
     font-family: -apple-system, SF UI Text, Helvetica Neue, Helvetica, Arial, sans-serif;
-    width: 80%;
+    width: 100%;
     top: 38.2%;
     left: 50%;
     position: fixed;
