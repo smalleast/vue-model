@@ -8,6 +8,7 @@
         <slot name="header"></slot>
         <slot name="main"></slot>
         <slot name="footer"></slot>
+        <slot></slot>
       </div>
 
     </div>
@@ -92,12 +93,10 @@
       overflow: hidden;
     }
 
-    &[data-visible=true]{
+    &[data-visible=true] {
       opacity: 1;
       transform: translate(-50%, 0%) scale(1);
     }
-
-
 
     &[data-theme=tranparent] {
     }
