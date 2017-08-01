@@ -60,13 +60,9 @@
     user-select: none;
     opacity: 0.01;
     &-container {
-      .vue-model {
-        left: 50%;
-      }
+    display: block;
       &[data-hidden=true] {
-        .vue-model {
-          left: -50%;
-        }
+      display: none;
       }
     }
     &[hidden] {
