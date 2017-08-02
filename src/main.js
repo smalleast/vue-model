@@ -1,3 +1,3 @@
-import VueModel from './components/vue-model.vue';
+import VueModel from './components/model.vue';
 
 module.exports = VueModel;

@@ -59,6 +59,7 @@
     "node-sass": "^3.13.0",
     "opn": "^4.0.2",
     "ora": "^0.3.0",
+    "resolution": "github:smalleast/resolution",
     "sass-loader": "^4.0.2",
     "selenium-server": "2.53.1",
     "semver": "^5.3.0",

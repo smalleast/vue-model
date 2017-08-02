@@ -1,9 +1,11 @@
 import Vue from 'vue'
-import Dev from './components/dev.vue'
+import Dev from './dev/dev.vue'
 
 
-Vue.config.debug = true
-Vue.config.devtools = true
+Vue.config.debug = true;
+Vue.config.devtools = true;
+
+
 
 /* eslint-disable no-new */
 new Vue({
