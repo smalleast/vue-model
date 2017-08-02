@@ -1,3 +1,4 @@
+import 'resolution';
 import Vue from 'vue'
 import Dev from './dev/dev.vue'
 
