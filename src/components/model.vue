@@ -59,7 +59,6 @@
       z-index: 10;
       transition: opacity .3s linear;
       font-size: 0;
-      padding: .2rem;
 
       &-header, &-body, &-footer {
         font-size: .24rem;
